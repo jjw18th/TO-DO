@@ -1,0 +1,21 @@
+{
+  "name": "to-do",
+  "version": "0.0.1",
+  "description": "",
+  "scripts": {
+    "start": "serve"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jjw18th/TO-DO.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jjw18th/TO-DO/issues"
+  },
+  "homepage": "https://github.com/jjw18th/TO-DO#readme",
+  "dependencies": {
+    "serve": "^14.2.1"
+  }
+}

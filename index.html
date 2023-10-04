@@ -5,45 +5,86 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>To-Dos App</title>
 </head>
-  <body>
-      <header><h1>To-Dos</h1></header>
-      <nav>
-        <button><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-file-earmark-check-fill" viewBox="0 0 14 14">
+<body>
+  <header>
+    <h1>To-Dos
+    </h1>
+  </header>
+  <nav>
+    <button>
+      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-file-earmark-check-fill" viewBox="0 0 14 14">
+      <path d="M9.293 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.707A1 1 0 0 0 13.707 4L10 .293A1 1 0 0 0 9.293 0zM9.5 3.5v-2l3 3h-2a1 1 0 0 1-1-1zm1.354 4.354-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 9.793l2.646-2.647a.5.5 0 0 1 .708.708z"/>
+      </svg>
+    </button>
+    <button>
+      <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 14 14" width="14px" height="14px">   
+      <path d="M 14.984375 2.4863281 A 1.0001 1.0001 0 0 0 14 3.5 L 14 4 L 8.5 4 A 1.0001 1.0001 0 0 0 7.4863281 5 L 6 5 A 1.0001 1.0001 0 1 0 6 7 L 24 7 A 1.0001 1.0001 0 1 0 24 5 L 22.513672 5 A 1.0001 1.0001 0 0 0 21.5 4 L 16 4 L 16 3.5 A 1.0001 1.0001 0 0 0 14.984375 2.4863281 z M 6 9 L 7.7929688 24.234375 C 7.9109687 25.241375 8.7633438 26 9.7773438 26 L 20.222656 26 C 21.236656 26 22.088031 25.241375 22.207031 24.234375 L 24 9 L 6 9 z"/>
+      </svg>
+    </button>
+  </nav>
+
+  <main>
+    <form>
+      <input type="text" placeholder="Enter a task">
+      <button type="button" id="addTask">+
+      </button>
+    </form>
+    <menu>
+      <li>
+        <button>All Tasks
+        </button>
+      </li>
+      <li>
+        <button>Complete Tasks
+        </button>
+      </li>
+      <li>
+        <button>Incomplete Tasks
+        </button>
+      </li>
+    </menu>
+    <nav>
+      <button type="button">
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-file-earmark-check-fill" viewBox="0 0 14 14">
         <path d="M9.293 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.707A1 1 0 0 0 13.707 4L10 .293A1 1 0 0 0 9.293 0zM9.5 3.5v-2l3 3h-2a1 1 0 0 1-1-1zm1.354 4.354-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 9.793l2.646-2.647a.5.5 0 0 1 .708.708z"/>
-        </svg></button>
-        <button><svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 14 14" width="14px" height="14px">    <path d="M 14.984375 2.4863281 A 1.0001 1.0001 0 0 0 14 3.5 L 14 4 L 8.5 4 A 1.0001 1.0001 0 0 0 7.4863281 5 L 6 5 A 1.0001 1.0001 0 1 0 6 7 L 24 7 A 1.0001 1.0001 0 1 0 24 5 L 22.513672 5 A 1.0001 1.0001 0 0 0 21.5 4 L 16 4 L 16 3.5 A 1.0001 1.0001 0 0 0 14.984375 2.4863281 z M 6 9 L 7.7929688 24.234375 C 7.9109687 25.241375 8.7633438 26 9.7773438 26 L 20.222656 26 C 21.236656 26 22.088031 25.241375 22.207031 24.234375 L 24 9 L 6 9 z"/></svg></button>
-      </nav>
-
-      <main>
-        <form>
-          <input type="text" placeholder="Enter a task">
-          <button type="button" id="addTask">+</button>
-        </form>
-        <menu>
-          <li><button>All Tasks</button></li>
-          <li><button>Complete Tasks</button></li>
-          <li><button>Incomplete Tasks</button></li>
-        </menu>
-        <nav>
-          <button type="button"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-file-earmark-check-fill" viewBox="0 0 14 14">
-          <path d="M9.293 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.707A1 1 0 0 0 13.707 4L10 .293A1 1 0 0 0 9.293 0zM9.5 3.5v-2l3 3h-2a1 1 0 0 1-1-1zm1.354 4.354-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 9.793l2.646-2.647a.5.5 0 0 1 .708.708z"/>
-          </svg></button>
-          <button type="button"><svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 14 14" width="14px" height="14px">    <path d="M 14.984375 2.4863281 A 1.0001 1.0001 0 0 0 14 3.5 L 14 4 L 8.5 4 A 1.0001 1.0001 0 0 0 7.4863281 5 L 6 5 A 1.0001 1.0001 0 1 0 6 7 L 24 7 A 1.0001 1.0001 0 1 0 24 5 L 22.513672 5 A 1.0001 1.0001 0 0 0 21.5 4 L 16 4 L 16 3.5 A 1.0001 1.0001 0 0 0 14.984375 2.4863281 z M 6 9 L 7.7929688 24.234375 C 7.9109687 25.241375 8.7633438 26 9.7773438 26 L 20.222656 26 C 21.236656 26 22.088031 25.241375 22.207031 24.234375 L 24 9 L 6 9 z"/></svg></button>
-          <input type="checkbox" id="checkbox1" value="dummy1" checked>
-          <label for="checkbox1"><s>Completed Task</s></label><br>
-          <button type="button"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-file-earmark-check-fill" viewBox="0 0 14 14">
-          <path d="M9.293 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.707A1 1 0 0 0 13.707 4L10 .293A1 1 0 0 0 9.293 0zM9.5 3.5v-2l3 3h-2a1 1 0 0 1-1-1zm1.354 4.354-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 9.793l2.646-2.647a.5.5 0 0 1 .708.708z"/>
-          </svg></button>
-          <button type="button"><svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 14 14" width="14px" height="14px">    <path d="M 14.984375 2.4863281 A 1.0001 1.0001 0 0 0 14 3.5 L 14 4 L 8.5 4 A 1.0001 1.0001 0 0 0 7.4863281 5 L 6 5 A 1.0001 1.0001 0 1 0 6 7 L 24 7 A 1.0001 1.0001 0 1 0 24 5 L 22.513672 5 A 1.0001 1.0001 0 0 0 21.5 4 L 16 4 L 16 3.5 A 1.0001 1.0001 0 0 0 14.984375 2.4863281 z M 6 9 L 7.7929688 24.234375 C 7.9109687 25.241375 8.7633438 26 9.7773438 26 L 20.222656 26 C 21.236656 26 22.088031 25.241375 22.207031 24.234375 L 24 9 L 6 9 z"/></svg></button>
-          <input type="checkbox" id="checkbox2" value="dummy2">
-          <label for="checkbox2">Incomplete Task</label>
-        </nav>
-      </main>
-
-      <section>
-        <button type="button">Delete All</button>
-        <button type="button">Complete All</button>
-      </section>
-      <script src="./script.js"></script>
-  </body>
+        </svg>
+      </button>
+      <button type="button">
+        <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 14 14" width="14px" height="14px">    
+        <path d="M 14.984375 2.4863281 A 1.0001 1.0001 0 0 0 14 3.5 L 14 4 L 8.5 4 A 1.0001 1.0001 0 0 0 7.4863281 5 L 6 5 A 1.0001 1.0001 0 1 0 6 7 L 24 7 A 1.0001 1.0001 0 1 0 24 5 L 22.513672 5 A 1.0001 1.0001 0 0 0 21.5 4 L 16 4 L 16 3.5 A 1.0001 1.0001 0 0 0 14.984375 2.4863281 z M 6 9 L 7.7929688 24.234375 C 7.9109687 25.241375 8.7633438 26 9.7773438 26 L 20.222656 26 C 21.236656 26 22.088031 25.241375 22.207031 24.234375 L 24 9 L 6 9 z"/>
+        </svg>
+      </button>
+      <input type="checkbox" id="checkbox2" value="dummy2">
+      <label for="checkbox2">Incomplete Task
+      </label> 
+      <input type="checkbox" id="checkbox1" value="dummy1" checked>
+      <label for="checkbox1">
+        <s>Completed Task
+        </s>
+      </label>
+      <button type="button">
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-file-earmark-check-fill" viewBox="0 0 14 14">
+        <path d="M9.293 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.707A1 1 0 0 0 13.707 4L10 .293A1 1 0 0 0 9.293 0zM9.5 3.5v-2l3 3h-2a1 1 0 0 1-1-1zm1.354 4.354-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 9.793l2.646-2.647a.5.5 0 0 1 .708.708z"/>
+        </svg>
+      </button>
+      <button type="button">
+        <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 14 14" width="14px" height="14px">    
+        <path d="M 14.984375 2.4863281 A 1.0001 1.0001 0 0 0 14 3.5 L 14 4 L 8.5 4 A 1.0001 1.0001 0 0 0 7.4863281 5 L 6 5 A 1.0001 1.0001 0 1 0 6 7 L 24 7 A 1.0001 1.0001 0 1 0 24 5 L 22.513672 5 A 1.0001 1.0001 0 0 0 21.5 4 L 16 4 L 16 3.5 A 1.0001 1.0001 0 0 0 14.984375 2.4863281 z M 6 9 L 7.7929688 24.234375 C 7.9109687 25.241375 8.7633438 26 9.7773438 26 L 20.222656 26 C 21.236656 26 22.088031 25.241375 22.207031 24.234375 L 24 9 L 6 9 z"/>
+        </svg>
+      </button>
+      <input type="checkbox" id="checkbox2" value="dummy2">
+      <label for="checkbox2">Incomplete Task
+      </label>
+    </nav>
+  </main>
+      
+  <section>
+    <button type="button">Delete All
+    </button>
+    <button type="button">Complete All
+    </button>
+  </section>
+  <script src="./script.js">
+  </script>
+</body>
 </html>
