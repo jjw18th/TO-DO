@@ -1,6 +1,9 @@
+import {doubles} from "./utilities.js"
 const arr=[];
 document.getElementById("addTask").addEventListener("click",()=>{
-    let ranNum=Math.random();
-    arr.push(ranNum);
+    const text=document.querySelector("#input-task").value;
+    //console.log(text);
+    arr.push(text);
 });
-
+console.log(doubles(4));
+window.arr2=arr;
