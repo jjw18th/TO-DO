@@ -1,0 +1,14 @@
+.linethrough
+{
+    text-decoration-line: line-through;
+}
+
+.font-bold
+{
+    font-weight: 700;
+}
+
+.bg-color
+{
+    background-color: rgb(244, 200, 90);
+}

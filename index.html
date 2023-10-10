@@ -4,79 +4,73 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To-Dos App</title>
+    <link rel="stylesheet" href="./style.css">
   </head>
   <body>
     <header>
       <h1>To-Dos</h1>
     </header>
     <nav>
-      <button>
+      <button id="checklist-mode">
         <svg xmlns="http://www.w3.org/2000/svg" height="14" width="14">
-          <use xlink:href="./sprites.svg#check-list-icon"></use>
+          <use href="./sprites.svg#check-list-icon"></use>
         </svg>
       </button>
-      <button>
+      <button id="delete-mode">
         <svg xmlns="http://www.w3.org/2000/svg" height="14" width="14">   
-          <use xlink:href="./sprites.svg#list-delete"></use>
+          <use href="./sprites.svg#list-delete"></use>
         </svg>
       </button>
     </nav>
 
-    <main>
+    <main id="main-content">
       <form>
         <input type="text" placeholder="Enter a task" id="input-task">
-        <button type="button" id="addTask">
+        <button type="button" id="addTask" class="bg-color">
           <svg xmlns="http://www.w3.org/2000/svg" width="12px" height="12px">
-            <use xlink:href="./sprites.svg#add-icon"></use>
+            <use href="./sprites.svg#add-icon"></use>
           </svg>
         </button>
       </form>
-      <menu>
-        <li>
-          <button>All Tasks</button>
+      <ol style="list-style-type: none;" id="ol-element">
+        <!--<li>
+          <button type="button">
+            <svg xmlns="http://www.w3.org/2000/svg" height="14" width="14">
+              <use href="./sprites.svg#check-list-icon"></use>
+            </svg>
+          </button>
+          <button type="button">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14px" height="14px">    
+              <use href="./sprites.svg#list-delete"></use>
+            </svg>
+          </button>
+          <input type="checkbox" id="checkbox1" value="dummy1" checked>
+          <label for="checkbox1" class="linethrough font-bold">
+            Completed Task
+          </label>
         </li>
         <li>
-          <button>Complete Tasks</button>
+          <button type="button">
+            <svg xmlns="http://www.w3.org/2000/svg" height="14" width="14">
+              <use href="./sprites.svg#check-list-icon"></use>
+            </svg>
+          </button>
+          <button type="button">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14px" height="14px">    
+              <use href="./sprites.svg#list-delete"></use>
+            </svg>
+          </button>
+          <input type="checkbox" id="checkbox2" value="dummy2">
+          <label for="checkbox2">Incomplete Task</label>
         </li>
-        <li>
-          <button>Incomplete Tasks</button>
-        </li>
-      </menu>
-      <article>
-        <button type="button">
-          <svg xmlns="http://www.w3.org/2000/svg" height="14" width="14">
-            <use xlink:href="./sprites.svg#check-list-icon"></use>
-          </svg>
-        </button>
-        <button type="button">
-          <svg xmlns="http://www.w3.org/2000/svg" width="14px" height="14px">    
-            <use xlink:href="./sprites.svg#list-delete"></use>
-          </svg>
-        </button>
-        <input type="checkbox" id="checkbox1" value="dummy1" checked>
-        <label for="checkbox1">
-          <s>Completed Task</s>
-        </label>
-      </article>
-      <article>
-        <button type="button">
-          <svg xmlns="http://www.w3.org/2000/svg" height="14" width="14">
-            <use xlink:href="./sprites.svg#check-list-icon"></use>
-          </svg>
-        </button>
-        <button type="button">
-          <svg xmlns="http://www.w3.org/2000/svg" width="14px" height="14px">    
-            <use xlink:href="./sprites.svg#list-delete"></use>
-          </svg>
-        </button>
-        <input type="checkbox" id="checkbox2" value="dummy2">
-        <label for="checkbox2">Incomplete Task</label>
-      </article>
+      -->
+      </ol>
     </main>
       
     <footer>
-      <button type="button">Delete All</button>
-      <button type="button">Complete All</button>
+      <button type="button" id="delete-all-button">Delete All</button>
+      <button type="button" id="complete-all-button">Complete All</button>
     </footer>
+    <script type="module" src="./script.js"></script>
   </body>
 </html>
