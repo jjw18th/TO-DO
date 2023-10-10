@@ -7,7 +7,10 @@ const link="http://www.w3.org/2000/svg";
 const checklistMode=document.getElementById("checklist-mode");
 const deleteMode=document.getElementById("delete-mode");
 checklistMode.classList.add("bg-color");
-
+const deleteAllButton=document.getElementById("delete-all-button");
+const completeAllButton=document.getElementById("complete-all-button");
+completeAllButton.style.display="inline";
+deleteAllButton.style.display="none";
 document.getElementById("addTask").addEventListener("click",()=>{
     const text=document.querySelector("#input-task").value;
     arr.push(text);
@@ -95,7 +98,7 @@ document.getElementById("addTask").addEventListener("click",()=>{
 
 
 
-const deleteAllButton=document.getElementById("delete-all-button");
+
 deleteAllButton.addEventListener("click", ()=>
 {
     while(olElement.firstElementChild)
@@ -105,7 +108,7 @@ deleteAllButton.addEventListener("click", ()=>
 
 });
 
-const completeAllButton=document.getElementById("complete-all-button");
+
 completeAllButton.addEventListener("click", ()=>
 {   
     for (const child of olElement.children) 
@@ -141,7 +144,10 @@ checklistMode.addEventListener("click", ()=>
     //console.dir(tempBtn);
     tempBtn.style.display="none";
     }
+    completeAllButton.style.display="inline";
+    deleteAllButton.style.display="none";
 })
+
 
 deleteMode.addEventListener("click",()=>
 {
@@ -157,4 +163,6 @@ deleteMode.addEventListener("click",()=>
         const tempSpan=child.getElementsByTagName("span")[0];
         tempSpan.style.display="none";
     }
+    completeAllButton.style.display="none";
+    deleteAllButton.style.display="inline";
 })
