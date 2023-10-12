@@ -7,73 +7,44 @@
     <link rel="stylesheet" href="./style.css">
   </head>
   <body class="bg-color">
-    <header>
-      <h1>
-        <span class="font-bold font-style">TODO</span>
-        <span class="">LIST</span>
-      </h1>
-    </header>
-    <nav>
-      <button id="checklist-mode">
-        <svg xmlns="http://www.w3.org/2000/svg" height="14" width="14">
-          <use href="./sprites.svg#check-list-icon"></use>
-        </svg>
-      </button>
-      <button id="delete-mode">
-        <svg xmlns="http://www.w3.org/2000/svg" height="14" width="14">   
-          <use href="./sprites.svg#list-delete"></use>
-        </svg>
-      </button>
-    </nav>
-
-    <main id="main-content">
-      <form>
-        <input type="text" placeholder="Enter a task" id="input-task">
-        <button type="button" id="addTask" class="bg-color">
-          <svg xmlns="http://www.w3.org/2000/svg" width="12px" height="12px">
-            <use href="./sprites.svg#add-icon"></use>
+    <div class="white-bg-color display-change borders width-change position shadows" style="left:650px; top:50px; border-color:white;" >
+      <header class="font-style">
+        <h1>
+          <span class="position" style="left:20px; bottom:4px; font-weight: 1600;">TODO</span>
+          <span class="display-block light-weight text-color position" style="left:21px; bottom:2px;">LIST</span>
+        </h1>
+      </header>
+      <nav>
+        <button id="checklist-mode" class="borders position" style="bottom:40px; left:227px;">
+          <svg xmlns="http://www.w3.org/2000/svg" height="14" width="14" class>
+            <use href="./sprites.svg#check-list-icon"></use>
           </svg>
         </button>
-      </form>
-      <ol style="list-style-type: none;" id="ol-element">
-        <!--<li>
-          <button type="button">
-            <svg xmlns="http://www.w3.org/2000/svg" height="14" width="14">
-              <use href="./sprites.svg#check-list-icon"></use>
+        <button id="delete-mode" class=" borders position" style="bottom:40px; left:227px;">
+          <svg xmlns="http://www.w3.org/2000/svg" height="14" width="14">   
+            <use href="./sprites.svg#list-delete"></use>
+          </svg>
+        </button>
+      </nav>
+
+      <main id="main-content">
+        <form>
+          <input type="text" placeholder="Enter a task" id="input-task" class="borders position move display-change width-change2" >
+          <button type="button" id="addTask" class="bg-color borders position display-change" style="bottom:30px; left:16px; height:32px;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="12px" height="12px" class="svgdesign">
+              <use href="./sprites.svg#add-icon"></use>
             </svg>
           </button>
-          <button type="button">
-            <svg xmlns="http://www.w3.org/2000/svg" width="14px" height="14px">    
-              <use href="./sprites.svg#list-delete"></use>
-            </svg>
-          </button>
-          <input type="checkbox" id="checkbox1" value="dummy1" checked>
-          <label for="checkbox1" class="linethrough font-bold">
-            Completed Task
-          </label>
-        </li>
-        <li>
-          <button type="button">
-            <svg xmlns="http://www.w3.org/2000/svg" height="14" width="14">
-              <use href="./sprites.svg#check-list-icon"></use>
-            </svg>
-          </button>
-          <button type="button">
-            <svg xmlns="http://www.w3.org/2000/svg" width="14px" height="14px">    
-              <use href="./sprites.svg#list-delete"></use>
-            </svg>
-          </button>
-          <input type="checkbox" id="checkbox2" value="dummy2">
-          <label for="checkbox2">Incomplete Task</label>
-        </li>
-      -->
-      </ol>
-    </main>
+          <div class="horizontal"></div>
+        </form>
+        <ol style="list-style-type: none;" id="ol-element" class="font-style"></ol>
+      </main>
       
-    <footer>
-      <button type="button" id="delete-all-button">Delete All</button>
-      <button type="button" id="complete-all-button">Complete All</button>
-    </footer>
-    <script type="module" src="./script.js"></script>
+      <footer>
+        <button type="button" id="delete-all-button" class="borders display-change width-change3 right-move bg-color font-bold" style="width:280px; margin-left:15px; margin-bottom:20px;">CLEAR ALL</button>
+        <button type="button" id="complete-all-button" class="borders display-change width-change3 right-move bg-color font-bold" style="width:280px; margin-left:15px; margin-bottom:20px;">FINISHED ALL</button>
+      </footer>
+      <script type="module" src="./script.js"></script>
+    </div>
   </body>
 </html>

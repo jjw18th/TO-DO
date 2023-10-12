@@ -1,6 +1,7 @@
-const arr=[];
+//const arr=[];
 const olElement=document.getElementById("ol-element");
 let mode=0;
+//let alt=0;
 const link="http://www.w3.org/2000/svg";
 
 
@@ -9,86 +10,124 @@ const deleteMode=document.getElementById("delete-mode");
 checklistMode.classList.add("bg-color");
 const deleteAllButton=document.getElementById("delete-all-button");
 const completeAllButton=document.getElementById("complete-all-button");
-completeAllButton.style.display="inline";
+completeAllButton.style.display="inline-block";
 deleteAllButton.style.display="none";
+
+//debugger;
+
+
 document.getElementById("addTask").addEventListener("click",()=>{
-    const text=document.querySelector("#input-task").value;
-    arr.push(text);
+    let text=document.querySelector("#input-task").value;
+    text=text.trim();
+    if(text==="")
+    return;
+    //arr.push(text);
     document.querySelector("#input-task").value="";
     
 
     const newTask=document.createElement("li");
+    newTask.classList.add("borders2" , "position", "move2", "display-change" , "width-change3");
+    newTask.style.marginTop="15px";
     const checklistSpan=document.createElement("span");
-    checklistSpan.setAttribute("type", "button");
-    const svgElement=document.createElementNS(link, "svg");
-
-    svgElement.setAttribute("xmlns", link);
+    checklistSpan.classList.add("position","borders3");
+    checklistSpan.style.display="inline-block";
+    checklistSpan.style.height="25px";
+    checklistSpan.style.width="26px";
+    checklistSpan.style.left="246px";
     
 
-    svgElement.setAttributeNS(null, "height" , "14");
 
+    const svgElement=document.createElementNS(link, "svg");
+    svgElement.setAttribute("xmlns", link);
+    svgElement.setAttributeNS(null, "height" , "14");
     svgElement.setAttributeNS(null, "width","14");
+
 
     const useElement=document.createElementNS(link, "use");
     useElement.setAttributeNS(null, 'href', "./sprites.svg#check-list-icon");
 
+
     svgElement.appendChild(useElement);
+    svgElement.style.position="relative";
+    svgElement.style.left="7px";
+    svgElement.style.top="3px";
+
+
     checklistSpan.appendChild(svgElement);
-    
     newTask.appendChild(checklistSpan);
-    
     newTask.append(" ");
 
+
+
     const deleteButton=document.createElement("button");
+    deleteButton.style.position="absolute"
+    deleteButton.style.height="29px";
+    deleteButton.style.left="246px";
+    deleteButton.classList.add("borders3");
     deleteButton.setAttribute("type", "button");
+
+
     const svgElement2=document.createElementNS(link, "svg");
-
     svgElement2.setAttribute("xmlns", link);
-    
-
     svgElement2.setAttributeNS(null, "height" , "14");
-
     svgElement2.setAttributeNS(null, "width","14");
+    
 
     const useElement2=document.createElementNS(link, "use");
     useElement2.setAttributeNS(null, 'href', "./sprites.svg#list-delete");
-
-    svgElement2.appendChild(useElement2);
-    deleteButton.appendChild(svgElement2);
     
     
-    //deleteButton.style.display="none";
-    if(mode==0)
-        deleteButton.style.display="none";
-    else
-        checklistSpan.style.display="none";
-    
-
-    newTask.appendChild(deleteButton);
-    newTask.append(" ");
     
     const inputElement=document.createElement("input");
     inputElement.setAttribute("type", "checkbox");
+    inputElement.style.position="absolute";
+    inputElement.style.left="250px";
+    inputElement.style.top="2px";
+    inputElement.style.opacity="0";
+
+
     const labelElement=document.createElement("label");
-    labelElement.appendChild(inputElement);
-    labelElement.append(" ");
     labelElement.append(text);
+
+
     newTask.appendChild(labelElement);
+    
+    if(mode===0)
+    {
+        deleteButton.style.display="none";
+        svgElement2.appendChild(useElement2);
+        deleteButton.appendChild(svgElement2);
+        newTask.appendChild(deleteButton);
+        newTask.appendChild(inputElement);
+    }
+    else
+    {
+        checklistSpan.style.visibility="hidden";
+        newTask.appendChild(inputElement);
+        inputElement.style.display="none";
+        svgElement2.appendChild(useElement2);
+        deleteButton.appendChild(svgElement2);
+        newTask.appendChild(deleteButton);
+    }
 
     inputElement.addEventListener("change",()=>{
     if(inputElement.checked){
     checklistSpan.classList.add("bg-color");
     newTask.classList.add("bg-color","font-bold");
     labelElement.classList.add("linethrough");
+    deleteButton.classList.add("bg-color");
     }
     else
     {checklistSpan.classList.remove("bg-color");
     newTask.classList.remove("bg-color","font-bold");
     labelElement.classList.remove("linethrough");
-    }})
+    deleteButton.classList.remove("bg-color");
+    }});
 
     deleteButton.addEventListener("click", ()=>
     {
+        deleteButton.classList.add("zindex1","zindex2");
+        inputElement.classList.add("zindex2","zindex1");
         olElement.removeChild(newTask);
     })
     
@@ -119,8 +158,10 @@ completeAllButton.addEventListener("click", ()=>
         temp.classList.add("linethrough");
         const tempSpan=child.getElementsByTagName("span")[0];
         tempSpan.classList.add("bg-color");
-        const temp2=temp.getElementsByTagName("input")[0];
+        const temp2=child.getElementsByTagName("input")[0];
         temp2.checked="true";
+        const del=child.getElementsByTagName("button")[0];
+        del.classList.add("bg-color");
         //temp2.disabled="true";
         //const temp2=temp.getElementsByTagName("input");
         //temp2.disabled="true";
@@ -137,14 +178,14 @@ checklistMode.addEventListener("click", ()=>
     const childElement=olElement.children;
     for(const child of childElement)
     {
-    //console.dir(child);
     const tempSpan=child.getElementsByTagName("span")[0];
-        tempSpan.style.display="inline";
+    tempSpan.style.display="inline-block";
+    const inp=child.getElementsByTagName("input")[0];
+    inp.style.display="inline-block";
     const tempBtn=child.getElementsByTagName("button")[0];
-    //console.dir(tempBtn);
     tempBtn.style.display="none";
     }
-    completeAllButton.style.display="inline";
+    completeAllButton.style.display="inline-block";
     deleteAllButton.style.display="none";
 })
 
@@ -158,11 +199,14 @@ deleteMode.addEventListener("click",()=>
     const childElement=olElement.children;
     for(const child of childElement)
     {
+        const inp=child.getElementsByTagName("input")[0];
+        inp.style.display="none";
+        //console.log(inp.getAttribute("checked"));
         const tempBtn=child.getElementsByTagName("button")[0];
-        tempBtn.style.display="inline";
+        tempBtn.style.display="inline-block";
         const tempSpan=child.getElementsByTagName("span")[0];
-        tempSpan.style.display="none";
+        tempSpan.style.visibility="hidden";
     }
     completeAllButton.style.display="none";
-    deleteAllButton.style.display="inline";
+    deleteAllButton.style.display="inline-block";
 })

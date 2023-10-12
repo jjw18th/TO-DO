@@ -3,10 +3,7 @@
     text-decoration-line: line-through;
 }
 
-.font-bold
-{
-    font-weight: 900;
-}
+
 
 .bg-color
 {
@@ -16,4 +13,132 @@
 .font-style
 {
     font-family: Arial, Helvetica, sans-serif;
+}
+
+.white-bg-color
+{
+    background-color: white;
+}
+
+.display-change
+{
+    display: inline-block;
+}
+
+
+
+.borders
+{
+    border-radius: 5px;
+    border: 2px solid black;
+}
+.borders2
+{
+    border-radius: 5px;
+    border: 2px solid black;
+}
+.borders3
+{
+    border-radius: 5px;
+    border-left: 2px solid black;
+    border-top:2px solid black;
+    border-right: none;
+    border-bottom: 2px solid black;
+    top:-2px;
+}
+.display-block
+{
+    display:block;
+}
+
+.light-weight
+{
+    font-weight: 200;
+}
+
+.text-color
+{
+    color: rgb(243, 205, 108);
+}
+
+
+
+.width-change
+{
+    width: 310px;
+}
+
+.width-change2
+{
+    width: 237px;
+    height:25px;
+}
+
+.width-change3
+{
+    width:274px;
+    height:25px;
+}
+
+.position
+{
+    position:relative;
+}
+
+.move
+{
+    left:16px;
+    bottom:30px;
+}
+
+.move2
+{
+    right:22px;
+}
+input#input-task:active
+{
+    border-radius: 5px;
+    border: 2px solid black;
+}
+input#input-task:focus-visible
+{
+    border-radius: 5px;
+    border: 2px solid black;
+    outline-width:0;
+}
+
+
+.font-bold
+{
+    font-weight: bold;
+}
+
+.shadows
+{
+    box-shadow: 0px 0px 5px ;
+}
+
+.horizontal
+{
+    width:277px;
+    height:1px;
+    background-color: grey;
+    position: relative;
+    left:20px;
+}
+
+.zindex1
+{
+    position:relative;
+    z-index: 1;
+}
+.zindex2
+{
+    position:relative;
+    z-index: 2;
+}
+.svgdesign
+{
+    stroke: black;
+    stroke-width: 4px;
 }
