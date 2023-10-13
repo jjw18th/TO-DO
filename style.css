@@ -32,11 +32,6 @@
     border-radius: 5px;
     border: 2px solid black;
 }
-.borders2
-{
-    border-radius: 5px;
-    border: 2px solid black;
-}
 .borders3
 {
     border-radius: 5px;
@@ -142,3 +137,12 @@ input#input-task:focus-visible
     stroke: black;
     stroke-width: 4px;
 }
+
+body
+{
+    height:100vh;
+    width:100vw;
+    margin:0px;
+}
+
+

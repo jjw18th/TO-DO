@@ -1,7 +1,7 @@
-//const arr=[];
+
 const olElement=document.getElementById("ol-element");
 let mode=0;
-//let alt=0;
+
 const link="http://www.w3.org/2000/svg";
 
 
@@ -13,7 +13,7 @@ const completeAllButton=document.getElementById("complete-all-button");
 completeAllButton.style.display="inline-block";
 deleteAllButton.style.display="none";
 
-//debugger;
+
 
 
 document.getElementById("addTask").addEventListener("click",()=>{
@@ -21,12 +21,11 @@ document.getElementById("addTask").addEventListener("click",()=>{
     text=text.trim();
     if(text==="")
     return;
-    //arr.push(text);
     document.querySelector("#input-task").value="";
     
 
     const newTask=document.createElement("li");
-    newTask.classList.add("borders2" , "position", "move2", "display-change" , "width-change3");
+    newTask.classList.add("borders" , "position", "move2", "display-change" , "width-change3");
     newTask.style.marginTop="15px";
     const checklistSpan=document.createElement("span");
     checklistSpan.classList.add("position","borders3");
@@ -178,8 +177,6 @@ checklistMode.addEventListener("click", ()=>
     const childElement=olElement.children;
     for(const child of childElement)
     {
-    const tempSpan=child.getElementsByTagName("span")[0];
-    tempSpan.style.display="inline-block";
     const inp=child.getElementsByTagName("input")[0];
     inp.style.display="inline-block";
     const tempBtn=child.getElementsByTagName("button")[0];
@@ -201,11 +198,8 @@ deleteMode.addEventListener("click",()=>
     {
         const inp=child.getElementsByTagName("input")[0];
         inp.style.display="none";
-        //console.log(inp.getAttribute("checked"));
         const tempBtn=child.getElementsByTagName("button")[0];
         tempBtn.style.display="inline-block";
-        const tempSpan=child.getElementsByTagName("span")[0];
-        tempSpan.style.visibility="hidden";
     }
     completeAllButton.style.display="none";
     deleteAllButton.style.display="inline-block";
