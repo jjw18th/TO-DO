@@ -1,7 +1,7 @@
 
 const olElement=document.getElementById("ol-element");
 let mode=0;
-
+let taskmode="A";
 const link="http://www.w3.org/2000/svg";
 
 
@@ -101,12 +101,19 @@ document.getElementById("addTask").addEventListener("click",()=>{
     }
     else
     {
-        checklistSpan.style.visibility="hidden";
+        //checklistSpan.style.visibility="hidden";
         newTask.appendChild(inputElement);
         inputElement.style.display="none";
         svgElement2.appendChild(useElement2);
         deleteButton.appendChild(svgElement2);
         newTask.appendChild(deleteButton);
+    }
+    if(taskmode==="C")
+    {
+        newTask.classList.add("bg-color","font-bold");
+        checklistSpan.classList.add("bg-color");
+        deleteButton.classList.add("bg-color");
+        labelElement.classList.add("linethrough");
     }
 
     inputElement.addEventListener("change",()=>{
@@ -130,7 +137,7 @@ document.getElementById("addTask").addEventListener("click",()=>{
         olElement.removeChild(newTask);
     })
     
-    olElement.appendChild(newTask);
+    olElement.prepend(newTask);
     
 });
 
@@ -139,11 +146,11 @@ document.getElementById("addTask").addEventListener("click",()=>{
 
 deleteAllButton.addEventListener("click", ()=>
 {
+    console.log("DELETED");
     while(olElement.firstElementChild)
     {
     olElement.firstElementChild.remove();
     }
-
 });
 
 
@@ -151,7 +158,6 @@ completeAllButton.addEventListener("click", ()=>
 {   
     for (const child of olElement.children) 
     {
-        //console.dir(child);
         child.classList.add("bg-color","font-bold");
         const temp=child.getElementsByTagName("label")[0];
         temp.classList.add("linethrough");
@@ -161,9 +167,6 @@ completeAllButton.addEventListener("click", ()=>
         temp2.checked="true";
         const del=child.getElementsByTagName("button")[0];
         del.classList.add("bg-color");
-        //temp2.disabled="true";
-        //const temp2=temp.getElementsByTagName("input");
-        //temp2.disabled="true";
     }
 });
 
@@ -204,3 +207,49 @@ deleteMode.addEventListener("click",()=>
     completeAllButton.style.display="none";
     deleteAllButton.style.display="inline-block";
 })
+
+
+const allTasks=document.getElementById("all-tasks");
+const completedTasks=document.getElementById("completed-tasks");
+const incompleteTasks=document.getElementById("incomplete-tasks");
+
+allTasks.addEventListener("click",()=>
+{
+    taskmode="A";
+    console.log("ALL TASKS");
+    const childElement=olElement.children;
+    for(const child of childElement)
+    {
+        if(child.style.display==="none")
+        child.style.display="inline-block";
+    };
+})
+
+
+completedTasks.addEventListener("click",()=>
+{
+    taskmode="C";
+    const childElement=olElement.children;
+    for(const child of childElement)
+    {
+        if(child.style.display==="none")
+        child.style.display="inline-block";
+        const tempspan=child.getElementsByTagName("span")[0];
+        if(!tempspan.classList.contains("bg-color"))
+        child.style.display="none";
+    };
+})
+
+incompleteTasks.addEventListener("click", ()=>{
+    taskmode="I";
+    const childElement=olElement.children;
+    for(const child of childElement)
+    {
+        if(child.style.display==="none")
+        child.style.display="inline-block";
+        const tempspan=child.getElementsByTagName("span")[0];
+        if(tempspan.classList.contains("bg-color"))
+        child.style.display="none";
+    }
+}
+)
