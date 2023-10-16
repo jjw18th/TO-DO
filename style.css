@@ -12,7 +12,7 @@
 
 .font-style
 {
-    font-family: Arial, Helvetica, sans-serif;
+    font: Arial;
 }
 
 .white-bg-color
@@ -32,15 +32,7 @@
     border-radius: 5px;
     border: 2px solid black;
 }
-.borders3
-{
-    border-radius: 5px;
-    border-left: 2px solid black;
-    border-top:2px solid black;
-    border-right: none;
-    border-bottom: 2px solid black;
-    top:-2px;
-}
+
 .display-block
 {
     display:block;
@@ -122,16 +114,6 @@ input#input-task:focus-visible
     left:20px;
 }
 
-.zindex1
-{
-    position:relative;
-    z-index: 1;
-}
-.zindex2
-{
-    position:relative;
-    z-index: 2;
-}
 .svgdesign
 {
     stroke: black;
@@ -150,4 +132,12 @@ body
     top:40px;
 }
 
-
+.borders3
+{
+    border-radius: 5px;
+    border-left: 2px solid black;
+    border-top:2px solid black;
+    border-right: none;
+    border-bottom: 2px solid black;
+    top:-2px;
+}

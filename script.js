@@ -1,7 +1,6 @@
 
 const olElement=document.getElementById("ol-element");
 let mode=0;
-let taskmode="A";
 const link="http://www.w3.org/2000/svg";
 
 
@@ -108,13 +107,6 @@ document.getElementById("addTask").addEventListener("click",()=>{
         deleteButton.appendChild(svgElement2);
         newTask.appendChild(deleteButton);
     }
-    if(taskmode==="C")
-    {
-        newTask.classList.add("bg-color","font-bold");
-        checklistSpan.classList.add("bg-color");
-        deleteButton.classList.add("bg-color");
-        labelElement.classList.add("linethrough");
-    }
 
     inputElement.addEventListener("change",()=>{
     if(inputElement.checked){
@@ -132,8 +124,6 @@ document.getElementById("addTask").addEventListener("click",()=>{
 
     deleteButton.addEventListener("click", ()=>
     {
-        deleteButton.classList.add("zindex1","zindex2");
-        inputElement.classList.add("zindex2","zindex1");
         olElement.removeChild(newTask);
     })
     
@@ -209,47 +199,4 @@ deleteMode.addEventListener("click",()=>
 })
 
 
-const allTasks=document.getElementById("all-tasks");
-const completedTasks=document.getElementById("completed-tasks");
-const incompleteTasks=document.getElementById("incomplete-tasks");
 
-allTasks.addEventListener("click",()=>
-{
-    taskmode="A";
-    console.log("ALL TASKS");
-    const childElement=olElement.children;
-    for(const child of childElement)
-    {
-        if(child.style.display==="none")
-        child.style.display="inline-block";
-    };
-})
-
-
-completedTasks.addEventListener("click",()=>
-{
-    taskmode="C";
-    const childElement=olElement.children;
-    for(const child of childElement)
-    {
-        if(child.style.display==="none")
-        child.style.display="inline-block";
-        const tempspan=child.getElementsByTagName("span")[0];
-        if(!tempspan.classList.contains("bg-color"))
-        child.style.display="none";
-    };
-})
-
-incompleteTasks.addEventListener("click", ()=>{
-    taskmode="I";
-    const childElement=olElement.children;
-    for(const child of childElement)
-    {
-        if(child.style.display==="none")
-        child.style.display="inline-block";
-        const tempspan=child.getElementsByTagName("span")[0];
-        if(tempspan.classList.contains("bg-color"))
-        child.style.display="none";
-    }
-}
-)
