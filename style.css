@@ -1,0 +1,143 @@
+.linethrough
+{
+    text-decoration-line: line-through;
+}
+
+
+
+.bg-color
+{
+    background-color: rgb(243, 205, 108);
+}
+
+.font-style
+{
+    font: Arial;
+}
+
+.white-bg-color
+{
+    background-color: white;
+}
+
+.display-change
+{
+    display: inline-block;
+}
+
+
+
+.borders
+{
+    border-radius: 5px;
+    border: 2px solid black;
+}
+
+.display-block
+{
+    display:block;
+}
+
+.light-weight
+{
+    font-weight: 200;
+}
+
+.text-color
+{
+    color: rgb(243, 205, 108);
+}
+
+
+
+.width-change
+{
+    width: 320px;
+}
+
+.width-change2
+{
+    width: 240px;
+    height:25px;
+}
+
+.width-change3
+{
+    width:274px;
+    height:25px;
+}
+
+.position
+{
+    position:relative;
+}
+
+.move
+{
+    left:16px;
+    bottom:30px;
+}
+
+.move2
+{
+    right:22px;
+}
+input#input-task:active
+{
+    border-radius: 5px;
+    border: 2px solid black;
+}
+input#input-task:focus-visible
+{
+    border-radius: 5px;
+    border: 2px solid black;
+    outline-width:0;
+}
+
+
+.font-bold
+{
+    font-weight: bold;
+}
+
+.shadows
+{
+    box-shadow: 0px 0px 5px ;
+}
+
+.horizontal
+{
+    width:270px;
+    height:1px;
+    background-color: grey;
+    position: relative;
+    left:20px;
+}
+
+.svgdesign
+{
+    stroke: black;
+    stroke-width: 4px;
+}
+
+body
+{
+    height:100vh;
+    width:100vw;
+    margin:0px;
+}
+.move-left
+{
+    left:648px;
+    top:40px;
+}
+
+.borders3
+{
+    border-radius: 5px;
+    border-left: 2px solid black;
+    border-top:2px solid black;
+    border-right: none;
+    border-bottom: 2px solid black;
+    top:-2px;
+}
