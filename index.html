@@ -1,27 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>To-Dos App</title>
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./style.css" />
   </head>
+
   <body class="bg-color">
-    <div class="white-bg-color display-change borders width-change position shadowsxr" style="left:650px; top:50px; border-color:white;" >
+    <div
+      style="left: 650px; top: 50px; border-color: white"
+      class="white-bg-color display-change borders width-change position shadowsxr"
+    >
       <header class="font-style">
         <h1>
-          <span class="position" style="left:20px; bottom:4px; font-weight: 1600;">TODO</span>
-          <span class="display-block light-weight text-color position" style="left:21px; bottom:2px;">LIST</span>
+          <span class="position" style="left: 20px; bottom: 4px; font-weight: 1600">TODO</span>
+          <span
+            style="left: 21px; bottom: 2px"
+            class="display-block light-weight text-color position"
+          >
+            LIST
+          </span>
         </h1>
-        
+
         <nav>
-            <button id="checklist-mode" class="borders position" style="bottom:40px; left:230px;">
+          <button id="checklist-mode" class="borders position" style="bottom: 40px; left: 230px">
             <svg xmlns="http://www.w3.org/2000/svg" height="14" width="14">
               <use href="./sprites.svg#check-list-icon"></use>
             </svg>
           </button>
-          <button id="delete-mode" class="borders position" style="bottom:40px; left:230px;">
-            <svg xmlns="http://www.w3.org/2000/svg" height="14" width="14">   
+
+          <button id="delete-mode" class="borders position" style="bottom: 40px; left: 230px">
+            <svg xmlns="http://www.w3.org/2000/svg" height="14" width="14">
               <use href="./sprites.svg#list-delete"></use>
             </svg>
           </button>
@@ -30,22 +40,60 @@
 
       <main id="main-content">
         <form>
-          <input type="text" placeholder="Enter a task" id="input-task" class="borders position move display-change width-change2" >
-          <button type="button" id="addTask" class="bg-color borders position display-change" style="bottom:30px; left:16px; height:32px;">
+          <input
+            type="text"
+            id="input-task"
+            placeholder="Enter a task"
+            class="borders position move display-change width-change2"
+          />
+
+          <button
+            id="addTask"
+            type="button"
+            class="bg-color borders position display-change"
+            style="bottom: 30px; left: 16px; height: 32px"
+          >
             <svg xmlns="http://www.w3.org/2000/svg" width="12px" height="12px" class="svgdesign">
               <use href="./sprites.svg#add-icon"></use>
             </svg>
           </button>
+
           <div class="horizontal"></div>
         </form>
-        <ol style="list-style-type: none; overflow:scroll; height:150px; overscroll-behavior: contain;" id="ol-element" class="font-style"></ol>
+
+        <ol
+          id="ol-element"
+          class="font-style"
+          style="
+            height: 150px;
+            overflow: scroll;
+            list-style-type: none;
+            overscroll-behavior: contain;
+          "
+        ></ol>
       </main>
-      
+
       <footer>
-        <button type="button" id="delete-all-button" class="borders display-change width-change3  bg-color font-bold" style="width:280px; margin-left:15px; margin-bottom:20px; left:40px;">CLEAR ALL</button>
-        <button type="button" id="complete-all-button" class="borders display-change width-change3 bg-color font-bold" style="width:280px; margin-left:15px; margin-bottom:20px; left:40px;">FINISHED ALL</button>
+        <button
+          type="button"
+          id="delete-all-button"
+          class="borders display-change width-change3 bg-color font-bold"
+          style="width: 280px; margin-left: 15px; margin-bottom: 20px; left: 40px"
+        >
+          CLEAR ALL
+        </button>
+
+        <button
+          type="button"
+          id="complete-all-button"
+          class="borders display-change width-change3 bg-color font-bold"
+          style="width: 280px; margin-left: 15px; margin-bottom: 20px; left: 40px"
+        >
+          FINISHED ALL
+        </button>
       </footer>
     </div>
+
     <script type="module" src="./script.js"></script>
   </body>
 </html>
